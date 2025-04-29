@@ -1,0 +1,9 @@
+<!--Ahora en vez de recoger los resultados como se hace el JS con document. lo vamos a hacer con directiva ngModel donde nombre es una variable, ponemos doble {{}} llamado interpolador que vuelva el contenido de una variable, en este caso mensaje-->
+<!--Hay que importar la directiva de ngModel desde nuestro app.component.ts-->
+Introduce Nombre: <input type="text" [(ngModel)]="nombre">
+<br><br>
+<button (click)="saludar()">Saludar</button>
+<br><br>
+<div>
+  <b>{{mensaje}}</b>
+</div>
