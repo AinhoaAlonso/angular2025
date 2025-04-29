@@ -1,0 +1,12 @@
+Nombre: <input type="text" [(ngModel)]="nombre">
+<br><br>
+<button (click)="guardarContacto()">GUARDAR</button>
+<button (click)="mostrarAgenda()">MOSTRAR</button>
+<br><br>
+<!--Para iterar por el array creamos en la etiqueta una nueva directiva llamada ngFor, luego tenemos que importar el CommonModule, y mostramos el contacto que agregamos-->
+<!--Vamos a ocultar la etiqueta div para que no este visible hasta que pulse el botón mostrar-->
+<div *ngIf="visible">
+  <h3 *ngFor = "let contacto of listadoAgenda">
+  {{contacto}}
+  </h3>
+</div>
