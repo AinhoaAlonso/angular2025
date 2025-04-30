@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Printable } from './../../../../../node_modules/tree-dump/lib/types.d';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root-agenda',
+  standalone: true,
   imports: [FormsModule, CommonModule],
   templateUrl: './agenda.component.html',
   styleUrl: './agenda.component.css'
@@ -15,8 +15,6 @@ export class AgendaComponent {
   listadoAgenda: string[] = [];
   //agendaSinDuplicados = new Set();
   visible: boolean = false;
-
-
 
   guardarContacto():void{
     console.log("Nombre", this.nombre);

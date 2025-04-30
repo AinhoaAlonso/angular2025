@@ -1,0 +1,16 @@
+<h1>Notas de Alumnos</h1>
+<label for="">Introduce la nota</label>
+<br><br>
+<input type="number" name="nota-introduccida" [(ngModel)]="notaIntroducida" placeholder="Notas">
+<br><br>
+<div>
+  <button (click)="guardarNotas()">GUARDAR</button>
+  <button (click)="mostrarResultados()">DATOS</button>
+</div>
+<div *ngIf="visible">
+  <p>La nota media es: {{notaMedia}}</p>
+  <p>La nota más alta es: {{notaMasAlta}}</p>
+  <p>La nota más baja es: {{notaMasBaja}}</p>
+  <p>El total de aprobados es: {{numeroAprobados}}</p>
+</div>
+
