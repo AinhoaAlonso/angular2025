@@ -1,0 +1,17 @@
+<!--Añadimos onchange para que cambie al seleccionar sin necesidad de boton onchange="buscar()"-->
+<select name="tematicaElegida" id="tematicaElegida" [(ngModel)]="tematicaSeleccionada" (change)="buscarUrlDeTematicas()">
+  <!--Angular enlaza el valor del <select> con la variable tematicaSeleccionada. Si no coincide con ninguno de los valores de las opciones, no seleccionará ninguna. -->
+  <option value="">Seleccione una temática</option>
+  <option [value]="tematica" *ngFor="let tematica of tematicasDisponibles">{{tematica}}</option>
+  <option value="todos">--Todos--</option>
+</select>
+<br><br>
+<div *ngIf="direcciones.length > 0">
+  <h1>Resultados</h1>
+  <ul >
+    <!--Al poner el index cogemos tb la posicion de cada contacto-->
+    <li *ngFor="let direccion of direcciones; index as i">
+     <p>{{direccion}}</p>
+    </li>
+   </ul>
+</div>
