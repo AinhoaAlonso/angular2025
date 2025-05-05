@@ -2,10 +2,10 @@
   <div id="left-wrapper">
       <h1>BUSCADOR DE DIRECCIONES</h1>
       <!--Añadimos onchange para que cambie al seleccionar sin necesidad de boton onchange="buscar()"-->
-      <select aria-label="Seleccionar temática" [(ngModel)]="tematicaSeleccionada" (change)="buscarUrlDeTematicas()">
+      <select name="tematicaElegida" id="tematicaElegida" [(ngModel)]="tematicaSeleccionada" (change)="buscarUrlDeTematicas()">
         <!--Angular enlaza el valor del <select> con la variable tematicaSeleccionada. Si no coincide con ninguno de los valores de las opciones, no seleccionará ninguna. -->
         <option value="">Seleccione una temática</option>
-        <option [value]="tematica" *ngFor="let tematica of tematicasDisponibles">{{tematica}}</option>
+        <option *ngFor="let tematica of tematicasDisponibles" [value]="tematica" >{{tematica}}</option>
         <option value="todos">--Todos--</option>
       </select>
       <br><br>

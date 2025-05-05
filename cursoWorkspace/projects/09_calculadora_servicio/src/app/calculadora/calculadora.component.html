@@ -1,0 +1,18 @@
+<label for="">Introduce Numero 1:</label>
+<input type="number" [(ngModel)]="num1">
+<br><br>
+<label for="">Introduce Numero 2:</label>
+<input type="number" [(ngModel)]="num2">
+<br><br>
+<label for="">Introduce Numero Factorial:</label>
+<input type="number" [(ngModel)]="numFactorial">
+<br><br>
+<div>
+  <button (click)="sumar()">Sumar</button>
+  <button (click)="multiplicar()">Multiplicar</button>
+  <button (click)="factorial()">Factorial</button>
+</div>
+<br>
+<div>
+  <b>{{resultado}}</b>
+</div>

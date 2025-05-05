@@ -3,6 +3,7 @@ interface ElementoTematica{
   tematica:string;
   direccion:string;
 }
+
 export class DatosTematicas{
   //Declaramos la propiedad
   elementos:ElementoTematica[];

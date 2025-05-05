@@ -10,31 +10,28 @@ import { CommonModule } from '@angular/common';
   styleUrl: './buscador.component.css'
 })
 export class BuscadorComponent {
-  //Los datos y la estructura estan dentro de model/DatosTematicas
+  //Los cojo del archivo DatosTematicas
   datosTematicas:DatosTematicas;
   tematicaSeleccionada:string = "";
-  tematicasDisponibles:string[] = [];
   direcciones:string[] = [];
+  //Creo una variable de tipo conjunto para quitar duplicados, hay que ponerle el tipo de datos
+  tematicasDisponibles:Set<string>;
 
   constructor(){
     //Creo una instancia de DatosTematicas
     this.datosTematicas = new DatosTematicas();
   }
-  // Se utiliza para realizar tareas de inicialización y recuperación de datos.
+  // Se utiliza para realizar tareas de inicialización y recuperación de datos. Tb se puede utilizar el constructor para inicializar los datos.
   ngOnInit():void{
-    //Utilizando map me devuelve un array con las tematicas que hay en mi array de objeto
-    let todasTematicas = this.datosTematicas.elementos.map(d => d.tematica);
-    //Creo un nuevo conjunto para que no haya duplicados y si le pongo [..], me convierte ese SET en un array.
-    this.tematicasDisponibles = [...new Set(todasTematicas)];
+    //Utilizando map me devuelve un array con las tematicas que hay en mi array de objeto y creo un nuevo Set para evitar duplicados
+    this.tematicasDisponibles = new Set(this.datosTematicas.elementos.map(d => d.tematica));
   }
 
   buscarUrlDeTematicas():void{
-
     if(this.tematicaSeleccionada.length>0){
       this.tematicaSeleccionada == this.tematicaSeleccionada[0];
     }
     //Me devuelve un array de las direcciones cuando la tematica que selecciono es igual a la tematica que va iterando o cuando es todos me muestra todas las direcciones
     this.direcciones = this.datosTematicas.elementos.filter(elemento => elemento.tematica == this.tematicaSeleccionada || this.tematicaSeleccionada == "todos").map(elemento =>elemento.direccion);
   }
-
 }
