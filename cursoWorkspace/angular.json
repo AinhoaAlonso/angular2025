@@ -644,10 +644,7 @@
             ],
             "tsConfig": "projects/30_continentes/tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "projects/30_continentes/public"
-              }
+              "projects/30_continentes/src/assets"
             ],
             "styles": [
               "projects/30_continentes/src/styles.css"
@@ -702,10 +699,7 @@
             ],
             "tsConfig": "projects/30_continentes/tsconfig.spec.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "projects/30_continentes/public"
-              }
+              "projects/30_continentes/src/assets"
             ],
             "styles": [
               "projects/30_continentes/src/styles.css"

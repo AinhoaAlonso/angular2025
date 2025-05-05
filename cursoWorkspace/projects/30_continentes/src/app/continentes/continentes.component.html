@@ -1,8 +1,33 @@
-<h3>Sube el archivo de continentes</h3>
+<!--<h3>Sube el archivo de continentes</h3>
 <input type="file" id="archivo-paises" accept=".json"/>
 <div>
-  <select name="continentes" id="select-continentes"></select>
+  <select name="continentes" id="select-continentes" ></select>
 </div>
 <div>
-  <table id="tabla-paises"></table>
+  <h2>Listado de países</h2>
+<ul>
+  <li *ngFor="let pais of datosContinentes">
+    {{pais.nombre}} - {{pais.continente}}
+  </li>
+</ul>
+</div>-->
+
+<h3>Selecciona un continente</h3>
+<select [(ngModel)]="continenteSeleccionado">
+  <option value="">Todos los continentes</option>
+  <option *ngFor="let cont of continentes" [value]="cont">{{ cont }}</option>
+</select>
+
+<div>
+  <table border="1" *ngIf="getPaisesFiltrados().length > 0">
+    <tr>
+      <th>País</th>
+      <th>Continente</th>
+    </tr>
+    <tr *ngFor="let pais of getPaisesFiltrados()">
+      <td>{{ pais.nombre }}</td>
+      <td>{{ pais.continente }}</td>
+    </tr>
+  </table>
 </div>
+
