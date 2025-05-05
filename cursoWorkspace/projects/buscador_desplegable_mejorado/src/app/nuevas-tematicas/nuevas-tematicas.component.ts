@@ -20,7 +20,7 @@ export class NuevasTematicasComponent {
 
     if (this.nuevaTematica && this.nuevaUrl) {
       // Llamamos al servicio para agregar la nueva temática
-      this.tematicasService.agregarNuevaTematica(this.nuevaTematica, this.nuevaUrl);
+      this.tematicasService.agregarNuevaTematica(this.nuevaTematica.toLowerCase(), this.nuevaUrl.toLowerCase());
       // Limpiamos los campos
       this.nuevaTematica = '';
       this.nuevaUrl = '';
