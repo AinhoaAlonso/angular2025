@@ -1,0 +1,21 @@
+<label>Introduce el nombre: </label>
+<input type="text" [(ngModel)]="nombre" placeholder="Nombre Contacto">
+<br><br>
+<label>Introduce el email: </label>
+<input type="text" [(ngModel)]="email" placeholder="Email">
+<br><br>
+<label>Introduce el teléfono: </label>
+<input type="text" [(ngModel)]="telefono" placeholder="Teléfono">
+<br><br>
+<button (click)="guardarContacto()">GUARDAR</button>
+<button (click)="mostrarContactos()">MOSTRAR CONTACTOS</button>
+<div>
+  <h1>Lista Contactos</h1>
+  <ul *ngIf="contacto">
+    <!--al poner el index cogemos tb la posicion de cada contacto-->
+    <li *ngFor="let contacto of agenda; index as i">
+     <b>Nombre: </b>{{contacto.nombre}}, <b>email: </b>{{contacto.email}}, <b>teléfono: </b>{{contacto.telefono}}
+     <button (click)="borrarContacto(i)">ELIMINAR</button>
+    </li>
+   </ul>
+</div>

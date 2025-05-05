@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { TematicasService } from './tematicas.service';
 
 describe('TematicasService', () => {
