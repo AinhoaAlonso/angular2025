@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './buscador.component.css'
 })
 export class BuscadorComponent {
-  //Los cojo del archivo DatosTematicas
+  //Los datos y la estructura estan dentro de model/DatosTematicas
   datosTematicas:DatosTematicas;
   tematicaSeleccionada:string = "";
   tematicasDisponibles:string[] = [];
@@ -30,11 +30,9 @@ export class BuscadorComponent {
 
   buscarUrlDeTematicas():void{
 
-    console.log("tematica seleccionada", this.tematicaSeleccionada);
     if(this.tematicaSeleccionada.length>0){
       this.tematicaSeleccionada == this.tematicaSeleccionada[0];
     }
-    //console.log("Datos", this.datosTematicas.elementos);
     //Me devuelve un array de las direcciones cuando la tematica que selecciono es igual a la tematica que va iterando o cuando es todos me muestra todas las direcciones
     this.direcciones = this.datosTematicas.elementos.filter(elemento => elemento.tematica == this.tematicaSeleccionada || this.tematicaSeleccionada == "todos").map(elemento =>elemento.direccion);
   }

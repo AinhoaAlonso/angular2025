@@ -35,7 +35,7 @@ export class AgendaComponent {
     this.visible =! this.visible;
   }
 
-  //borra cada contacto
+  //borra cada contacto con el index
   borrarContacto(index:number):void{
     this.agenda.splice(index,1);
   }
