@@ -1,0 +1,27 @@
+<div *ngIf="validacionVisible">
+  <label for="">USUARIO</label>
+  <input type="text" placeholder="Introduce tu usuario" [(ngModel)]="usuario">
+  <br><br>
+  <label for="">CONTRASEÑA</label>
+  <input type="text" placeholder="Introduce tu contraseña" [(ngModel)]="password">
+  <br><br>
+  <button (click)="validarUsuario()">VALIDAR USUARIO</button>
+  <br><br>
+  <div>{{mensaje}}</div>
+</div>
+<div *ngIf="registroVisible">
+  <div>{{mensaje}}</div>
+  <label for="">USUARIO</label>
+  <input type="text" placeholder="Introduce tu usuario" [(ngModel)]="usuario">
+  <br><br>
+  <label for="">CONTRASEÑA</label>
+  <input type="text" placeholder="Introduce tu contraseña" [(ngModel)]="password">
+  <br><br>
+  <label for="">EMAIL</label>
+  <input type="text" placeholder="Introduce tu email" [(ngModel)]="email">
+  <br><br>
+  <label for="">TELÉFONO</label>
+  <input type="text" placeholder="Introduce tu telefono" [(ngModel)]="telefono">
+  <br><br>
+  <button (click)="registrarClientes()">REGISTRAR</button>
+</div>

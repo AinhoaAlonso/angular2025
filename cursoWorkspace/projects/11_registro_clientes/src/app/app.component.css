@@ -1,0 +1,17 @@
+/* Estilo para el título */
+h1 {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #007bff;
+  margin-top: 20px;
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Estilo para el componente de clientes */
+app-clientes {
+  display: block;
+  margin: 0 auto;
+  max-width: 600px;
+}
