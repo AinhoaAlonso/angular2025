@@ -7,7 +7,7 @@
   <br><br>
   <button (click)="validarUsuario()">VALIDAR USUARIO</button>
   <br><br>
-  <div>{{mensaje}}</div>
+  <div [ngClass]="{'color1':validacionVisible,'color2':!validacionVisible}">{{mensaje}}</div>
 </div>
 <div *ngIf="registroVisible">
   <div>{{mensaje}}</div>

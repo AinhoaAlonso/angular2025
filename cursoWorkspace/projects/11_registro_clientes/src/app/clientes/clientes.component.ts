@@ -28,19 +28,19 @@ export class ClientesComponent {
   constructor(private clientesService: RegistroClientesService){}
 
   validarUsuario():void{
+    //Llamamos a la funcion y si existe el cliente lo valida y si no pide el registro
     let cliente = this.clientesService.validarUsuario(this.usuario, this.password);
     console.log("Cliente", cliente);
     if(cliente){
       this.registroVisible = false;
       this.usuario = "";
       this.password = "";
-      this.mensaje = "Usuario registrado Correctamente";
+      this.mensaje = "Usuario validado Correctamente";
     } else{
       this.registroVisible = true;
       this.validacionVisible = false;
       this.mensaje = "Usuario no registrado";
     }
-
   }
   registrarClientes():void{
     let usuario = new Clientes(this.usuario, this.password, this.email, this.telefono);
@@ -52,6 +52,6 @@ export class ClientesComponent {
     this.telefono = "";
     this.validacionVisible = true;
     this.registroVisible = false;
-    this.mensaje = "";
+    this.mensaje = "Usuario registrado. Valida tu usuario";
   }
 }

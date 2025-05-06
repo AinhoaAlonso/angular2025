@@ -46,8 +46,14 @@ button:hover {
 }
 
 /* Estilo para el mensaje */
-div > div {
+.color2 {
   color: #d9534f;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+.color1 {
+  color: green;
   font-weight: bold;
   text-align: center;
   margin-top: 10px;

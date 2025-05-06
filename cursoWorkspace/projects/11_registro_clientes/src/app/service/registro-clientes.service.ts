@@ -9,6 +9,7 @@ export class RegistroClientesService {
   constructor() { }
   listadoClientes: Clientes[]=[];
 
+  //metodo para validar que los parametros que pasamos son iguales a los que estan en el array clientes(viene del model).Utilizamos el find para que los busque y los compare
   validarUsuario(usuario:string,password:string):Clientes{
     return this.listadoClientes.find((user) => user.usuario == usuario && user.password == password);
   }
