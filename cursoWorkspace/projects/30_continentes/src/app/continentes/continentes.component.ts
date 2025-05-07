@@ -13,22 +13,22 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class ContinentesComponent implements OnInit {
   paises: any[] = [];
-  continentes: string[] = [];
-  continenteSeleccionado = '';
+  continentes: string[];
+  continenteSeleccionado:string = "";
 
   constructor(private continentesService: ContinentesService) {}
 
   ngOnInit(): void {
-    this.continentesService.obtenerDatosDesdeJson().subscribe(datos => {
+    this.continentesService.getDatosDesdeJson().subscribe(datos => {
       this.paises = datos;
-      this.continentes = this.continentesService.obtenerContinentes(datos);
-      console.log('✅ JSON cargado con HttpClient:', this.paises);
+      this.continentes = this.continentesService.getContinentes(datos);
+      console.log('✅ JSON cargado con HttpClient:', datos);
+      console.log('✅ Continentes', this.continentes);
     });
+
   }
 
-  getPaisesFiltrados(): any[] {
-    return this.continenteSeleccionado === ''
-      ? this.paises
-      : this.paises.filter(p => p.continente === this.continenteSeleccionado);
+  getPaisesFiltrados(continenteSeleccionado, paises): void {
+    
   }
 }

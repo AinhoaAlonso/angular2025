@@ -1,14 +1,3 @@
-<div *ngIf="validacionVisible">
-  <label for="">USUARIO</label>
-  <input type="text" placeholder="Introduce tu usuario" [(ngModel)]="usuario">
-  <br><br>
-  <label for="">CONTRASEÑA</label>
-  <input type="text" placeholder="Introduce tu contraseña" [(ngModel)]="password">
-  <br><br>
-  <button (click)="validarUsuario()">VALIDAR USUARIO</button>
-  <br><br>
-  <div [ngClass]="{'color1':validacionVisible}">{{mensaje}}</div>
-</div>
 <div *ngIf="registroVisible">
   <div [ngClass]="{'color2':validacionVisible == false}">{{mensaje}}</div>
   <label for="">USUARIO</label>

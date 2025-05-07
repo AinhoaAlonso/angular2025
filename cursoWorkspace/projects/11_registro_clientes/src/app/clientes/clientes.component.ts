@@ -3,8 +3,6 @@ import { FormsModule } from '@angular/forms';
 import { RegistroClientesService } from '../service/registro-clientes.service';
 import { Clientes } from '../model/Clientes';
 import { CommonModule } from '@angular/common';
-
-
 @Component({
   selector: 'app-clientes',
   imports: [FormsModule,CommonModule],
@@ -22,7 +20,6 @@ export class ClientesComponent {
   registroVisible:boolean = false;
   //para que se vea el formulario de validad por defecto es el que se ve
   validacionVisible:boolean = true;
-
   listadoClientes: Clientes[];
 
   constructor(private clientesService: RegistroClientesService){}
@@ -40,6 +37,7 @@ export class ClientesComponent {
       this.registroVisible = true;
       this.validacionVisible = false;
       this.mensaje = "Usuario no registrado";
+      console.log(this.validacionVisible);
     }
   }
   registrarClientes():void{
