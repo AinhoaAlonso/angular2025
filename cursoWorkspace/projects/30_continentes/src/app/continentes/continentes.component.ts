@@ -15,7 +15,7 @@ export class ContinentesComponent implements OnInit {
   paises: any[] = [];
   continentes: string[];
   continenteSeleccionado:string = "";
-  paisesFiltrados:string[];
+
 
   constructor(private continentesService: ContinentesService) {}
 
@@ -30,6 +30,8 @@ export class ContinentesComponent implements OnInit {
   }
 
   getPaisesFiltrados(): void {
-    this.paisesFiltrados = this.paises.filter(elemento => elemento.region == this.continenteSeleccionado).map(elemento =>elemento.name);
+    let paisesFiltrados = this.paises.filter(elemento => elemento.region == this.continenteSeleccionado);
+    this.continentesService.getPaisesFiltrados(paisesFiltrados);
+    console.log(paisesFiltrados);
   }
 }

@@ -1,0 +1,12 @@
+<div>
+  <h2>Buscar Contacto</h2>
+  <label for="">Email</label>
+  <input type="text" placeholder="Introduce el email" [(ngModel)]="email">
+  <br><br>
+  <button (click)="buscarContacto()">BUSCAR</button>
+  <div>
+    <p>Nombre: {{contactoBuscado.nombre}}</p>
+    <p>Email: {{contactoBuscado.email}}</p>
+    <p>Teléfono: {{contactoBuscado.telefono}}</p>
+  </div>
+</div>

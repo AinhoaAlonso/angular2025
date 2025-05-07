@@ -1,0 +1,14 @@
+<div>
+  <h2>Nuevo Contacto</h2>
+  <label for="">Nombre</label>
+  <input type="text" placeholder="Introduce el nombre" [(ngModel)]="nombre">
+  <br><br>
+  <label for="">Email</label>
+  <input type="text" placeholder="Introduce el email" [(ngModel)]="email">
+  <br><br>
+  <label for="">Teléfono</label>
+  <input type="text" placeholder="Introduce el teléfono" [(ngModel)]="telefono">
+  <br><br>
+  <button (click)="crearContacto()">GUARDAR</button>
+  <div>{{mensaje}}</div>
+</div>
