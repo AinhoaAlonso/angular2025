@@ -1,0 +1,11 @@
+<div >
+  <label for="">USUARIO</label>
+  <input type="text" placeholder="Introduce tu usuario" [(ngModel)]="usuario">
+  <br><br>
+  <label for="">CONTRASEÑA</label>
+  <input type="text" placeholder="Introduce tu contraseña" [(ngModel)]="password">
+  <br><br>
+  <button (click)="validarUsuario()">VALIDAR USUARIO</button>
+  <br><br>
+  <div>{{mensaje}}</div>
+</div>

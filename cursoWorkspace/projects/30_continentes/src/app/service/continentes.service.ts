@@ -14,13 +14,10 @@ export class ContinentesService {
     return this.http.get<any>('assets/paises.json');
   }
 
-  getContinentes(datos): any {
-    this.continentesSinDuplicados = new Set(datos.map(p => p.region));
+  getContinentes(paises): any {
+    this.continentesSinDuplicados = new Set(paises.map(p => p.region));
     console.log("Continentes sin duplicados", this.continentesSinDuplicados);
     return this.continentesSinDuplicados;
-  }
-  getPaisesFiltrados(continente:string, datos:any): any{
-    return
   }
 }
 
