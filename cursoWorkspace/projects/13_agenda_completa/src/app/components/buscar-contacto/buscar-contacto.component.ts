@@ -16,7 +16,7 @@ export class BuscarContactoComponent {
 
   constructor(private contactoService:ContactoService){}
   buscarContacto():void{
-    this.contactoBuscado = this.contactoService.buscarContacto(this.email);
+    this.contactoBuscado = this.contactoService.buscarContacto(this.email) || null;
     console.log("Contacto Buscado", this.contactoBuscado);
     this.email = "";
   }

@@ -1,6 +1,10 @@
 <!--Componente principal donde van a ir las routes-->
-<div>
-  <a [routerLink]="['/crearcontacto']" routerLinkActive="router-link-active" >CREAR CONTACTO</a>
-  <a [routerLink]="['/buscarcontacto']" routerLinkActive="router-link-active" >BUSCAR CONTACTO</a>
+<div class="container mt-4">
+  <nav class="nav nav-pills mb-4">
+    <a class="nav-link" routerLink="/crearcontacto" routerLinkActive="active">Crear Contacto</a>
+    <a class="nav-link" routerLink="/buscarcontacto" routerLinkActive="active">Buscar Contacto</a>
+    <a class="nav-link" routerLink="/mostrarcontacto" routerLinkActive="active">Mostrar Todos los Contactos</a>
+  </nav>
+
   <router-outlet></router-outlet>
 </div>

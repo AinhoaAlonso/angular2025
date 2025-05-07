@@ -23,4 +23,12 @@ export class ContactoService {
     return this.agenda.find((e)=>e.email == email);
   }
 
+  mostrarContactos(): Contacto[]{
+    return this.agenda;
+  }
+
+  eliminarContacto(index:number){
+    return this.agenda.splice(index,1);
+  }
+
 }

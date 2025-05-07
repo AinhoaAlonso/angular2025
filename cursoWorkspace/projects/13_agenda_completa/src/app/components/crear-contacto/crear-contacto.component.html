@@ -1,14 +1,21 @@
-<div>
-  <h2>Nuevo Contacto</h2>
-  <label for="">Nombre</label>
-  <input type="text" placeholder="Introduce el nombre" [(ngModel)]="nombre">
-  <br><br>
-  <label for="">Email</label>
-  <input type="text" placeholder="Introduce el email" [(ngModel)]="email">
-  <br><br>
-  <label for="">Teléfono</label>
-  <input type="text" placeholder="Introduce el teléfono" [(ngModel)]="telefono">
-  <br><br>
-  <button (click)="crearContacto()">GUARDAR</button>
-  <div>{{mensaje}}</div>
+<div class="card mb-4">
+  <div class="card-header bg-success text-white">
+    <h2 class="mb-0">Nuevo Contacto</h2>
+  </div>
+  <div class="card-body">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input id="nombre" type="text" class="form-control" [(ngModel)]="nombre" placeholder="Introduce el nombre">
+    </div>
+    <div class="mb-3">
+      <label for="emailNuevo" class="form-label">Email</label>
+      <input id="emailNuevo" type="email" class="form-control" [(ngModel)]="email" placeholder="Introduce el email">
+    </div>
+    <div class="mb-3">
+      <label for="telefono" class="form-label">Teléfono</label>
+      <input id="telefono" type="text" class="form-control" [(ngModel)]="telefono" placeholder="Introduce el teléfono">
+    </div>
+    <button class="btn btn-success" (click)="crearContacto()">GUARDAR</button>
+    <div class="mt-2 text-info">{{ mensaje }}</div>
+  </div>
 </div>

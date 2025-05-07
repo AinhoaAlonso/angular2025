@@ -1,13 +1,23 @@
-<div>
-  <h2>Buscar Contacto</h2>
-  <label for="email">Email</label>
-  <input type="text" name="email" placeholder="Introduce el email" [(ngModel)]="email">
-  <br><br>
-  <button (click)="buscarContacto()">BUSCAR</button>
-  <div *ngIf="contactoBuscado">
-    <h3>Contacto</h3>
-    <p>Nombre: {{contactoBuscado.nombre}}</p>
-    <p>Email: {{contactoBuscado.email}}</p>
-    <p>Teléfono: {{contactoBuscado.telefono}}</p>
+<div class="card mb-4">
+  <div class="card-header bg-warning text-dark">
+    <h2 class="mb-0">Buscar Contacto</h2>
+  </div>
+  <div class="card-body">
+    <div class="mb-3">
+      <label for="buscarEmail" class="form-label">Email</label>
+      <input id="buscarEmail" type="text" class="form-control" [(ngModel)]="email" placeholder="Introduce el email">
+    </div>
+    <button class="btn btn-warning text-white" (click)="buscarContacto()">BUSCAR</button>
+
+    <div *ngIf="contactoBuscado" class="mt-3 border p-3 rounded bg-light">
+      <h5>Resultado:</h5>
+      <p><strong>Nombre:</strong> {{ contactoBuscado.nombre }}</p>
+      <p><strong>Email:</strong> {{ contactoBuscado.email }}</p>
+      <p><strong>Teléfono:</strong> {{ contactoBuscado.telefono }}</p>
+    </div>
+    <br><br>
+    <div *ngIf="contactoBuscado === null">
+      <p class="text-danger">No existe ningún contacto con ese email.</p>
+    </div>
   </div>
 </div>
