@@ -1,0 +1,10 @@
+.mb-4{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  grid-gap: 20px;
+}
+.nav-link{
+  border:3px solid;
+  /*margin-right: 100px;*/
+}
