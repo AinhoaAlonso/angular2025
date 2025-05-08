@@ -1,0 +1,1 @@
+SELECT * FROM bancabd.movimientos inner join bancabd.cuentas on movimientos.idCuenta = cuentas.numeroCuenta order by numeroCuenta;
