@@ -19,9 +19,7 @@ export class ContinentesService {
     console.log("Continentes sin duplicados", this.continentesSinDuplicados);
     return this.continentesSinDuplicados;
   }
-  getPaisesFiltrados(paisesFiltrados): any {
-    paisesFiltrados.forEach(pais => {
-      return pais.name;
-    });
-  }
+  /*getPaisesFiltrados(paisesFiltrados:string[]){
+    return this.paisesFiltrados.filter((pais)=>pais.)
+  }*/
 }

@@ -9,8 +9,9 @@ import { CommonModule } from '@angular/common';
   templateUrl: './mostrar-contactos.component.html',
   styleUrl: './mostrar-contactos.component.css'
 })
-export class MostrarContactosComponent {
-  contactos:Contacto[] = [];
+export class MostrarContactosComponent implements OnInit {
+  //variable que ya viene con los datos de otro componente, solo la declaramos
+  contactos:Contacto[];
 
   constructor(private contactoService: ContactoService){}
 

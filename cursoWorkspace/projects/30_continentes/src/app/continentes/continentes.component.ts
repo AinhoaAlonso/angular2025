@@ -12,10 +12,10 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrl: './continentes.component.css'
 })
 export class ContinentesComponent implements OnInit {
-  paises: any[] = [];
+  paises: any[];
   continentes: string[];
   continenteSeleccionado:string = "";
-
+  paisesFiltrados:string[]=[];
 
   constructor(private continentesService: ContinentesService) {}
 
@@ -28,10 +28,9 @@ export class ContinentesComponent implements OnInit {
     });
 
   }
-
   getPaisesFiltrados(): void {
-    let paisesFiltrados = this.paises.filter(elemento => elemento.region == this.continenteSeleccionado);
-    this.continentesService.getPaisesFiltrados(paisesFiltrados);
-    console.log(paisesFiltrados);
+    this.paisesFiltrados = this.paises.filter(elemento => elemento.region == this.continenteSeleccionado);
+    console.log("Paises", this.paises);
+    console.log("Continente seleccionado", this.continenteSeleccionado);
   }
 }
