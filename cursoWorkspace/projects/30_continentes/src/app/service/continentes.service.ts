@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Pais } from '../model/Pais';
 
 @Injectable({
@@ -20,15 +20,24 @@ export class ContinentesService {
     return this.http.get<Pais[]>(this.url);
 
   }
-  //Este funciona
-  getContinentes(paises:Pais[]): Set<string> {
+  //Este funciona pero vamos a mejorar la logica
+  /*getContinentes(paises:Pais[]): Set<string> {
     this.continentesSinDuplicados = new Set(paises.map(p => p.region));
     console.log("Continentes sin duplicados", this.continentesSinDuplicados);
     return this.continentesSinDuplicados;
-  }
-  //Pero ahora quiero que el metodo devuelva un Observable con los continentes Sin Duplicados
-  getContinentesConObservable(continentes:string[]):Observable<string[]>{
-    return this.http.get<Pais[]>(this.url).pipe(continentes.map(c => c.region));
+  }*/
+  //El metodo devuelva un Observable con los continentes Sin Duplicados
+  //pipe() es un método de los observables que te permite encadenar operadores de RxJS(map, filter,..)
+  //Primer map:es el operador de RxJS, que transforma lo que emite el Observable, un flujo de datos que (cuando se resuelve) emite un array de países.
+  //Segundo map:extrae la regiones del array
+  //Set no devuelve un array por eso ponemos[...] tb podriamos hacer Array.from()
+  getContinentesConObservable():Observable<string[]>{
+    return (this.http.get<Pais[]>(this.url).pipe(
+      map((paises: Pais[]) =>[...new Set(paises.map(p => p.region))])));
   }
 
+  getPaisesFiltrados(continenteSeleccionado:string):Observable<Pais[]>{
+    return (this.http.get<Pais[]>(this.url).pipe(
+      map((paises: Pais[]) =>paises.filter(elemento => elemento.region == continenteSeleccionado || continenteSeleccionado == "todos"))));
+  }
 }
