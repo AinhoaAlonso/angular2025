@@ -20,11 +20,15 @@ export class ContinentesService {
     return this.http.get<Pais[]>(this.url);
 
   }
-
+  //Este funciona
   getContinentes(paises:Pais[]): Set<string> {
     this.continentesSinDuplicados = new Set(paises.map(p => p.region));
     console.log("Continentes sin duplicados", this.continentesSinDuplicados);
     return this.continentesSinDuplicados;
+  }
+  //Pero ahora quiero que el metodo devuelva un Observable con los continentes Sin Duplicados
+  getContinentesConObservable(continentes:string[]):Observable<string[]>{
+    return this.http.get<Pais[]>(this.url).pipe(continentes.map(c => c.region));
   }
 
 }
