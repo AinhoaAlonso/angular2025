@@ -2,35 +2,36 @@ import { Component, OnInit } from '@angular/core';
 import { ContinentesService } from '../service/continentes.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { Pais } from '../model/Pais';
 
 @Component({
   selector: 'app-continentes',
   standalone: true,
-  imports: [FormsModule, CommonModule, HttpClientModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './continentes.component.html',
   styleUrl: './continentes.component.css'
 })
 export class ContinentesComponent implements OnInit {
-  paises: any[];
-  continentes: string[];
+  paises: Pais[];
+  continentes: Set<string>;
   continenteSeleccionado:string = "";
-  paisesFiltrados:string[]=[];
+  paisesFiltrados:Pais[]=[];
 
   constructor(private continentesService: ContinentesService) {}
 
   ngOnInit(): void {
-    this.continentesService.getDatosDesdeJson().subscribe(datos => {
-      this.paises = datos;
-      this.continentes = this.continentesService.getContinentes(datos);
-      console.log('✅ JSON cargado con HttpClient:', datos);
-      console.log('✅ Continentes', this.continentes);
+    //subscribe es un metodo del Observable que esta en el servicio
+    this.continentesService.getDatosPaises()
+    .subscribe(data => {
+      this.paises = data;
+      this.continentes = this.continentesService.getContinentes(data);
+      console.log('JSON cargado con HttpClient:', data);
+      console.log('Continentes', this.continentes);
     });
 
   }
   getPaisesFiltrados(): void {
-    this.paisesFiltrados = this.paises.filter(elemento => elemento.region == this.continenteSeleccionado);
-    console.log("Paises", this.paises);
+    this.paisesFiltrados = this.paises.filter(elemento => elemento.region == this.continenteSeleccionado || this.continenteSeleccionado == "todos");
     console.log("Continente seleccionado", this.continenteSeleccionado);
   }
 }
