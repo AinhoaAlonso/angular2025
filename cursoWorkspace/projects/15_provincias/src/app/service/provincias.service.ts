@@ -1,10 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
-import { Provincia } from '../model/Provincia';
-import { Municipio } from '../model/Municipio';
-
-
 
 @Injectable({
   providedIn: 'root'

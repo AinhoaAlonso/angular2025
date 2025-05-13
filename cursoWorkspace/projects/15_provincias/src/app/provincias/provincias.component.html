@@ -1,4 +1,5 @@
 <select name="provincia-seleccionada" [(ngModel)]="provinciaSeleccionada" (change)="getMunicipios()">
+  <!--Tengo un array con el cod y el nombre de la provincia, para el desplegable el nombre que esta en la posicion 1 y el value el cod de la posicion 0, que lo guarda en la provinciaSeleccionada-->
   <option *ngFor="let pro of provincias" value="{{pro[0]}}">{{pro[1]}}</option>
 </select>
 <br><br>

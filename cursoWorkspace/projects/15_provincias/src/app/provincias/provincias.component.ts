@@ -14,10 +14,10 @@ import { Municipio } from '../model/Municipio';
   styleUrl: './provincias.component.css'
 })
 export class ProvinciasComponent implements OnInit{
-  provincias:string[];
+  provincias:Provincia[];
   provinciaSeleccionada:string ="";
-  municipios:string[];
- 
+  municipios:Municipio[];
+
   constructor(private provinciasService:ProvinciasService){}
 
   ngOnInit(): void {
