@@ -20,7 +20,7 @@ export class ProvinciasService {
   }
 
   getMunicipios(codprovincia:string):Observable<any>{
-    return this.http.get<any>(`https://www.el-tiempo.net/api/json/v2/provincias/${codprovincia}/municipios`).pipe(map((municipios) => municipios.municipios.map((m)=> m)));
+    return this.http.get<any>(`${this.provinciasUrl}/${codprovincia}/municipios`).pipe(map((municipios) => municipios.municipios.map((m)=> m)));
   }
 }
 
