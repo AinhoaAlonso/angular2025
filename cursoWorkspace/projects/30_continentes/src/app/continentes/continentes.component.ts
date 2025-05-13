@@ -13,38 +13,35 @@ import { switchMap, tap } from 'rxjs';
   styleUrl: './continentes.component.css'
 })
 export class ContinentesComponent implements OnInit {
-  paises: Pais[];
+  //paises: Pais[];
   continentes: string[];
   continenteSeleccionado:string = "";
-  paisesFiltrados:Pais[]=[];
+  paisesFiltrados:Pais[];
 
   constructor(private continentesService: ContinentesService) {}
 
   ngOnInit(): void {
     //subscribe es un metodo del Observable que esta en el servicio
-    //getContinentesConObservable() depende de los países ya cargados, evitamos usar subscribe anidados
-   //creamos otro metodo y lo llamamos desde ngOnInit
-
-    this.continentesService.getDatosPaises()
+    //Esta opcion es por si queremos todos los paises directamente en la página
+    /*this.continentesService.getDatosPaises()
     .subscribe(data => {
         this.paises = data;
         console.log('JSON cargado con HttpClient:', data);
       });
-    this.getContinentesConObservable();
-  }
+    this.getContinentesConObservable();*/
 
-  getContinentesConObservable():void{
+    //Continentes sin duplicados en el combo
     this.continentesService.getContinentesConObservable()
-    .subscribe(continentes => {
+    .subscribe(continentes => {//Observable <string[]>
         this.continentes = continentes;
         console.log('Continentes', this.continentes);
       });
   }
-
+  //Filtra los paises dependiendo de la seleccion de continente
   getPaisesFiltrados(): void {
     console.log("Continente seleccionado", this.continenteSeleccionado);
     this.continentesService.getPaisesFiltrados(this.continenteSeleccionado)
-    .subscribe(paises =>{
+    .subscribe(paises =>{ //Observable <Pais[]>
       this.paisesFiltrados = paises;
       console.log("Paises filtrados", this.paisesFiltrados);
     })

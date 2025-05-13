@@ -1,0 +1,61 @@
+h3 {
+  color: #555;
+  margin-top: 20px;
+}
+input[type="file"] {
+  margin-top: 10px;
+  display: block;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 6px;
+  background: #f9f9f9;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+}
+input[type="file"]::-webkit-file-upload-button {
+  background-color: #2b6777;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+  background-color: #3c8da0;
+}
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-family: inherit;
+  font-size: 1rem;
+}
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+
+}
+table, th, td {
+  border: 1px solid #ddd;
+}
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+th {
+  background-color: #2b6777;
+  color: white;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}

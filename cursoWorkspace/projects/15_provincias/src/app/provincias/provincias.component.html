@@ -1,0 +1,21 @@
+<select name="provincia-seleccionada" [(ngModel)]="provinciaSeleccionada" (change)="getMunicipios()">
+  <option *ngFor="let pro of provincias" value="{{pro[0]}}">{{pro[1]}}</option>
+</select>
+<br><br>
+<div *ngIf="municipios">
+  <table border="1" >
+    <tr>
+      <th>Nombre</th>
+      <th>Población</th>
+      <th>Superficie</th>
+      <th>Altitud</th>
+    </tr>
+    <tr *ngFor="let m of municipios">
+      <td>{{ m.NOMBRE }}</td>
+      <td>{{ m.POBLACION_MUNI }}</td>
+      <td>{{ m.SUPERFICIE}}</td>
+      <td>{{ m.ALTITUD}}</td>
+    </tr>
+  </table>
+</div>
+

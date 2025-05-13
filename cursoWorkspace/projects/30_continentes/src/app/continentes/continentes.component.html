@@ -1,10 +1,10 @@
 <h3>Selecciona un continente</h3>
 <select name="continente-seleccionado" [(ngModel)]="continenteSeleccionado"  (change)="getPaisesFiltrados()">
   <option value="todos">Todos los continentes</option>
-  <option *ngFor="let cont of continentes" [value]="cont">{{ cont}}</option>
+  <option *ngFor="let cont of continentes" value="{{cont}}">{{cont}}</option>
 </select>
 <br><br>
-<div *ngIf="paisesFiltrados.length > 0">
+<div *ngIf="paisesFiltrados">
   <table border="1" >
     <tr>
       <th>País</th>
