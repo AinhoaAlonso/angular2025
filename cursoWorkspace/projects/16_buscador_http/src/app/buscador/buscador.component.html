@@ -1,0 +1,19 @@
+<div class="buscador-wrapper">
+  <div>
+    <input type="text" placeholder="Introduce la temática" [(ngModel)]="tematicaBuscada">
+  </div>
+  <br>
+  <div>
+    <button (click)="getDatosTematicas()">BUSCAR</button>
+  </div>
+  <div *ngIf="datosTematicas.length > 0">
+    <h1>Resultados</h1>
+    <ul >
+      <!--Al poner el index cogemos tb la posicion de cada contacto-->
+      <li *ngFor="let dato of datosTematicas; index as i">
+        <p>{{dato.url}}</p>
+        <p>{{dato.descripcion}}</p>
+      </li>
+    </ul>
+  </div>
+</div>

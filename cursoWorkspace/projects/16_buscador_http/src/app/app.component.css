@@ -1,0 +1,35 @@
+.navegacion-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.nav_wrapper {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #1976d2;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 8px 18px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-link:hover {
+  background: #e3f2fd;
+  color: #0d47a1;
+}
+
+.active {
+  background: #1976d2;
+  color: #fff !important;
+}

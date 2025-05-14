@@ -1,0 +1,12 @@
+<div class="altas-wrapper">
+  <div>
+    <input type="text" placeholder="Introduce temática existente o nueva temática" [(ngModel)]="nuevaTematica">
+  </div>
+  <div>
+    <input type="text" placeholder="Introduce la URL" [(ngModel)]="nuevaUrl">
+  </div>
+  <div>
+    <input type="text" placeholder="Introduce la descripción" [(ngModel)]="nuevaDescripcion">
+  </div>
+  <button (click)="postNuevaAlta()">GUARDAR</button>
+</div>
