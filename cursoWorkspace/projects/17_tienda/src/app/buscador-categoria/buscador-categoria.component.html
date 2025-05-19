@@ -1,0 +1,25 @@
+<div>
+  <select [(ngModel)]="idCategoriaSeleccionada" (change)="getProductosPorCategoria()">
+    <option [value]="categoria.idCategoria" *ngFor="let categoria of categorias">{{categoria.nombre}}</option>
+  </select>
+</div>
+<br><br>
+<div *ngIf="productos.length > 0">
+  <table border="1">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Denominación</th>
+      <th>Precio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let producto of productos; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ producto.denominacion }}</td>
+      <td>{{ producto.precio }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+

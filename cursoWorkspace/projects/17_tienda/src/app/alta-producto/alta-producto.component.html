@@ -1,0 +1,17 @@
+<div class="alta-producto-wrapper">
+  <div>
+    <input type="text" name="denominacion" placeholder="Introduce nombre producto" [(ngModel)]="nuevoProducto.denominacion">
+  </div>
+  <div>
+    <input type="text" name="precio" placeholder="Introduce el precio" [(ngModel)]="nuevoProducto.precio">
+  </div>
+  <div>
+    <select [(ngModel)]="nuevoProducto.idCategoria">
+      <option [value]="categoria.idCategoria" *ngFor="let categoria of categorias">{{categoria.nombre}}</option>
+    </select>
+  </div>
+  <div >
+    <input type="number" [value]="nuevoProducto.codigo" placeholder="nuevoProducto.codigo" readonly>
+  </div>
+  <button (click)="postNuevoProducto()">GUARDAR</button>
+</div>
