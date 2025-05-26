@@ -1,0 +1,24 @@
+<h3>Selecciona un continente</h3>
+<select name="continente-seleccionado" [(ngModel)]="continenteSeleccionado"  (change)="getPaisesFiltrados()">
+  <option value="todos">Todos los continentes</option>
+  <option *ngFor="let cont of continentes" value="{{cont}}">{{cont}}</option>
+</select>
+<br><br>
+<div *ngIf="paisesFiltrados">
+  <table border="1" >
+    <tr>
+      <th>País</th>
+      <th>Capital</th>
+      <th>Población</th>
+      <th>Bandera</th>
+    </tr>
+    <tr *ngFor="let pais of paisesFiltrados">
+      <td>{{ pais.nombre }}</td>
+      <td>{{ pais.capital }}</td>
+      <td>{{ pais.poblacion}}</td>
+      <td>
+        <img src="{{ pais.bandera }}" alt="" width="75px"></td>
+    </tr>
+  </table>
+</div>
+
