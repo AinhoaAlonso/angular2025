@@ -1,0 +1,28 @@
+<h3></h3>
+<!--<select name="cuenta_seleccionada" [(ngModel)]="cuentaSeleccionada" (change)="getMovimientosByCuenta()">
+  <option *ngFor="let cuenta of cuentaFiltrada" value="{{cuenta}}">{{cuenta}}</option>
+</select>-->
+<div>
+  <label for="">Introduce la cuenta</label>
+  <input type="number" [(ngModel)]="movimiento.idCuenta">
+  <button (click)="getMovimientosByCuenta()">BUSCAR</button>
+</div>
+<br><br>
+<div *ngIf="cuentaFiltrada">
+  <table border="1" >
+    <tr>
+      <th>IdMovimiento</th>
+      <th>IdCuenta</th>
+      <th>Fecha</th>
+      <th>Cantidad</th>
+      <th>Operación</th>
+    </tr>
+    <tr *ngFor="let cuenta of cuentaFiltrada">
+      <td>{{ cuenta.IdMovimiento}}</td>
+      <td>{{ cuenta.IdCuenta }}</td>
+      <td>{{ cuenta.fecha}}</td>
+      <td>{{ cuenta.cantidad}}</td>
+      <td>{{ cuenta.operacion}}</td>
+    </tr>
+  </table>
+</div>
