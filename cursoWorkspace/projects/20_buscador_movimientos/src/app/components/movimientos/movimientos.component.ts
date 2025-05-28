@@ -11,13 +11,17 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './movimientos.component.css'
 })
 export class MovimientosComponent {
-
+  fecha1: Date;
+  fecha2: Date;
   movimientos:Movimiento[];
+
   constructor(private movimientosService:MovimientosService){}
 
-  getMovimientosByCuenta():void{
-    this.movimientosService.getMovimientosByCuenta(this.movimientos)
-    .subscribe(
+  buscarMovimientosPorFechas(){
+    this.movimientosService.buscarPorFechas(this.fecha1, this.fecha2)
+    .subscribe(data =>{
+      this.movimientos = data;
     })
   }
+
 }

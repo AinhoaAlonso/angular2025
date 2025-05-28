@@ -1,7 +1,6 @@
 import { Movimiento } from './../model/Movimiento';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Movimiento } from '../model/Movimiento';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -20,8 +19,10 @@ export class MovimientosService {
   }
 
   buscarPorFechas(fecha1:Date, fecha2:Date):Observable<Movimiento[]>{
-    return this.http.get<Movimiento[]>(`${this.urlMovimientos}fechas/fecha1=${fecha1}&fecha2=${fecha2}`)
+    return this.http.get<Movimiento[]>(`${this.urlMovimientos}fechas?fecha1=${fecha1}&fecha2=${fecha2}`)
   }
 
-  altasMovimientos(movimiento:Movimiento):Observable<
+  altasMovimientos(movimiento:Movimiento):Observable<Movimiento>{
+    return this.http.post<Movimiento>(`${this.urlMovimientos}alta`, movimiento);
+  }
 }
