@@ -1,8 +1,19 @@
 <div class="main_matriculacion_container">
+  <h1>MATRICULACIÓN ALUMNOS</h1>
   <div>
-    <select name="cursoSeleccionado" id="" >
+    <select name="cursoSeleccionado" [(ngModel)]="idCursoSeleccionado" (change)="getAlumnosNoMatriculados(idCursoSeleccionado)">
       <option></option>
-      <option *ngFor="let curso of cursos" value="curso">{{curso}}</option>
+      <option *ngFor="let curso of cursos" value={{curso.idCurso}} >{{curso.nombre}}</option>
     </select>
   </div>
+  <div *ngIf="alumnos">
+    <select name="alumnosNoMatriculados" [(ngModel)]="alumnoSeleccionado">
+      <option></option>
+      <option *ngFor="let alumno of alumnos" value= {{alumno.usuario}} >{{alumno.usuario}}</option>
+    </select>
+  </div>
+  <div>
+    <button (click)="matricularAlumnos()">MATRICULAR</button>
+  </div>
+  <div>{{mensaje}}</div>
 </div>

@@ -3,6 +3,8 @@ import { MatriculacionService } from '../../service/matriculacion.service';
 import { Curso } from '../../model/Curso';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Alumno } from '../../model/Alumno';
+import { Matricula } from '../../model/Matricula';
 
 @Component({
   selector: 'app-matriculacion',
@@ -12,7 +14,12 @@ import { CommonModule } from '@angular/common';
 })
 export class MatriculacionComponent implements OnInit {
 
-  cursos:string[];
+  cursos:Curso[];
+  idCursoSeleccionado:number = 0;
+  alumnos:Alumno[];
+  alumnoSeleccionado:string = "";
+  mensaje:string = "";
+
   constructor(private matriculacionService:MatriculacionService){}
 
   ngOnInit(): void {
@@ -21,15 +28,24 @@ export class MatriculacionComponent implements OnInit {
         this.cursos = data
         console.log("Cursos", this.cursos)
     });
-
   }
-
-  /*getCursos(){
-    this.matriculacionService.getCursos().subscribe(
+  getAlumnosNoMatriculados(idCursoSeleccionado:number){
+    this.matriculacionService.getAlumnosNoMatriculados(idCursoSeleccionado).subscribe(
       data => {
-        this.cursos = data
-        console.log("Cursos", this.cursos)
+        this.alumnos = data
+        console.log("Alumnos no matriculados", this.alumnos)
+      });
+  }
+  matricularAlumnos(){
+    const nuevaMatricula:Matricula= new Matricula(this.alumnoSeleccionado, this.idCursoSeleccionado);
+    console.log("Nueva Matricula", nuevaMatricula);
+    this.matriculacionService.matricularAlumnos(nuevaMatricula).subscribe(
+      data =>{
+        if(data){
+          this.mensaje = "Alumno matriculado con éxito";
+        }else{
+          this.mensaje = "No fue posible realizar la matricula";
+        }
     });
-
-  }*/
+  }
 }

@@ -1,7 +1,4 @@
 export class Curso{
-    filter(arg0: (c: any) => any): any {
-      throw new Error('Method not implemented.');
-    }
     idCurso:number;
     nombre:string;
     duracion:number;
