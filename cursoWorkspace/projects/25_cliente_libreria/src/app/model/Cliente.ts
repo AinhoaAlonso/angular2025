@@ -1,4 +1,5 @@
 export class Cliente{
+    idCliente:number;
     usuario:string;
     password:string;
 

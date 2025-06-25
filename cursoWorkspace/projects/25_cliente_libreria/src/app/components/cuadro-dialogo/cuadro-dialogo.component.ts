@@ -14,6 +14,6 @@ export class CuadroDialogoComponent {
     @Inject(MAT_DIALOG_DATA) public data: { mensaje: string }){}
     cerrar() {
       this.dialogRef.close();
-    } 
+    }
 
 }

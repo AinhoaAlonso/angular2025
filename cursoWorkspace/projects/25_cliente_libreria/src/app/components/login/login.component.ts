@@ -8,6 +8,7 @@ import { CuadroDialogoComponent } from '../cuadro-dialogo/cuadro-dialogo.compone
 
 @Component({
   selector: 'app-login',
+  standalone:true,
   imports: [FormsModule,CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
